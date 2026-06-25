@@ -1,0 +1,19 @@
+services:
+  zoho-recruit-mcp:
+    build: .
+    image: zoho-recruit-mcp-server:latest
+    container_name: zoho-recruit-mcp
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      MCP_TRANSPORT: "http"
+      HTTP_HOST: "0.0.0.0"
+      HTTP_PORT: "8000"
+      ZOHO_CLIENT_ID: "${ZOHO_CLIENT_ID}"
+      ZOHO_CLIENT_SECRET: "${ZOHO_CLIENT_SECRET}"
+      ZOHO_REFRESH_TOKEN: "${ZOHO_REFRESH_TOKEN}"
+      ZOHO_REGION: "${ZOHO_REGION:-com}"
+      LOG_LEVEL: "${LOG_LEVEL:-INFO}"
+    env_file:
+      - .env

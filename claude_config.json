@@ -1,0 +1,16 @@
+{
+  "mcpServers": {
+    "zoho-recruit": {
+      "command": "python",
+      "args": ["-m", "src.server"],
+      "env": {
+        "ZOHO_CLIENT_ID": "",
+        "ZOHO_CLIENT_SECRET": "",
+        "ZOHO_REFRESH_TOKEN": "",
+        "ZOHO_REGION": "com",
+        "MCP_TRANSPORT": "stdio",
+        "LOG_LEVEL": "INFO"
+      }
+    }
+  }
+}
